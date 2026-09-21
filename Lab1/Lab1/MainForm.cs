@@ -30,23 +30,27 @@ namespace Lab1
             }
         }
 
-        private void form2ToolStripMenuItem_Click(object sender, EventArgs e)
+       private void form2ToolStripMenuItem_Click(object sender, EventArgs e)
+{
+    while (true)
+    {
+        // переписати на while true
+        //Hide();
+        Form2 form = new Form2();
+        if (form.ShowDialog() != DialogResult.OK)
         {
-            //Hide();
-            Form2 form = new Form2();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                Form3 form1 = new Form3();
-                DialogResult res1 = form1.ShowDialog();
-                if (res1 == DialogResult.Retry)
-                {
-                    form2ToolStripMenuItem_Click(sender, e);
-                    return;
-                }
-
-            }
-            Show();
+            break;
         }
+        Form3 form1 = new Form3();
+        DialogResult res1 = form1.ShowDialog();
+        if (res1 != DialogResult.Retry)
+        {
+            break;
+        }
+     
+    }
+}
+
 
         private void label1_Click(object sender, EventArgs e)
         {
