@@ -25,6 +25,8 @@ namespace lab5
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+         Shape shape = MyEditor.getInstance().shapeList[e.RowIndex];
+ shape.reInit();
             MainForm mainForm = (MainForm)Owner;
             mainForm.redraw();
         }
